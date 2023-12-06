@@ -8,16 +8,17 @@
     <title>Formulário</title>
 </head>
 <body>
-    <form action="/action_page.php" method="post" id="form1">
+    <form action="/action_page.php" onsubmit="return validarFormulario()" method="post" id="form1">
         <div>
           <label for="nome">Nome:</label>
-          <input type="text" id="nome" />
+          <input type="text" id="nome" name="nome" required>
         </div>
         <div>
           <label for="cpf">CPF:</label>
-          <input type="cpf" id="cpf" />
+          <input type="cpf" id="cpf" name="cpf" placeholder="xxx.xxx.xxx-xx" maxlength="14" oninput="mascaraCPF(event)" required>
         </div>
         <button type="submit" form="form1" value="Submit">Submit</button>
       </form>
+      <script src="./validator.js"></script>
 </body>
 </html>
